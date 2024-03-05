@@ -46,6 +46,24 @@ router.delete('/delete/:id', async (req, res) => {
     }
 });
 
+//setting a PUT route for a specific todo (update)
+router.put('/update/:id', async (req, res) => {
+    try {
+        const updatedTodo = await Todo.updateOne(
+         //   { _id: req.params.id },
+         //   { $set: { todo: req.body.todo } }
+
+         {
+            author: "Mette Jespersen",
+            title: "Read a book"
+         }
+        );
+        res.json(updatedTodo);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
 
 
 module.exports = router;
