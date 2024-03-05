@@ -4,4 +4,4 @@ const TodosSchema = new mongoose.Schema({
     author: String
 });
 
-module.exports = mongoose.model('Todos', TodosSchema);gi
+module.exports = mongoose.model('Todos', TodosSchema);

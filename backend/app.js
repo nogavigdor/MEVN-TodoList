@@ -32,6 +32,12 @@ mongoose.connect(uri, {
         res.send('Hello from Home Page');
     });
 
+    //import routes
+    const TodosRoute = require('./routes/Todos');
+    app.use('/todos', TodosRoute);
+
+
+
     //start server
     const PORT = process.env.PORT || 3000;
 
