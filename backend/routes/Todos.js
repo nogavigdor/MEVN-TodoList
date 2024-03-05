@@ -36,6 +36,16 @@ router.get('/get/:id', async (req, res) => {
     }
 });
 
+//setting a DELETE route for a specific todo
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const deleteTodo = await Todo.findByIdAndDelete({_id: req.params.id});
+        res.json(removedTodo);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
 
 
 module.exports = router;
