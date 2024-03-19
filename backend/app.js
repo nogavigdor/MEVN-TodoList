@@ -34,8 +34,14 @@ mongoose.connect(uri, {
 
     //import routes
     const TodosRoute = require('./routes/Todos');
+
+    //get all todos routs
     app.use('/todos', TodosRoute);
 
+    //post a new todo route
+    app.use('/todos/new', TodosRoute);
+
+    
 
 
     //start server

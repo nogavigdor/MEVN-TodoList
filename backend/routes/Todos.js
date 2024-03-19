@@ -12,11 +12,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-//Post a todo route
+//Post a new todo route
 router.post('/new', async (req, res) => {
-    const todo = new Todo({
+    const newTodo = new Todo({
         
-            todo: "wash the dishes",
+            todo: "wash the dishesssss",
             author: "Noga Vigdor"
 
         }
@@ -39,8 +39,8 @@ router.get('/get/:id', async (req, res) => {
 //setting a DELETE route for a specific todo
 router.delete('/delete/:id', async (req, res) => {
     try {
-        const deleteTodo = await Todo.findByIdAndDelete({_id: req.params.id});
-        res.json(removedTodo);
+        const deletedTodo = await Todo.findByIdAndDelete({_id: req.params.id});
+        res.json(deletedTodo);
     } catch (err) {
         res.json({ message: err });
     }
